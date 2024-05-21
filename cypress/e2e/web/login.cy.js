@@ -14,7 +14,7 @@ describe('Funcionalidade: Login', () => {
   });
 
   it('Deve fazer login com sucesso', () => {
-    cy.get('[data-testid="email"]').clear().type('jessica@gmail.com');
+    cy.get('[data-testid="email"]').clear().type('jessica14@gmail.com');
     cy.get('[data-testid="senha"]').clear().type('123456');
     cy.get('[data-testid="entrar"]').click();
     cy.get('h1').should('contain', 'Bem Vindo');

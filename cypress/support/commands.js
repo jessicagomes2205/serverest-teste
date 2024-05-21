@@ -23,3 +23,27 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('login', (email, senha) => {
+  cy.visit('login');
+  cy.get('[data-testid="email"]').clear().type(email);
+  cy.get('[data-testid="senha"]').clear().type(senha);
+  cy.get('[data-testid="entrar"]').click();
+});
+
+Cypress.Commands.add('cadastroUsuarioAdmin', (nome, email, password) => {
+  cy.visit('cadastrarusuarios');
+  cy.get('[data-testid="nome"]').clear().type(nome);
+  cy.get('[data-testid="email"]').clear().type(email);
+  cy.get('[data-testid="password"]').clear().type(password);
+  cy.get('[data-testid="checkbox"]').check();
+  cy.get('[data-testid="cadastrar"]').click();
+});
+
+Cypress.Commands.add('cadastroUsuarioComum', (nome, email, password) => {
+  cy.visit('cadastrarusuarios');
+  cy.get('[data-testid="nome"]').clear().type(nome);
+  cy.get('[data-testid="email"]').clear().type(email);
+  cy.get('[data-testid="password"]').clear().type(password);
+  cy.get('[data-testid="cadastrar"]').click();
+});
