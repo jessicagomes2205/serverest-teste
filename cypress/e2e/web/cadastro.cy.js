@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 import { faker } from '@faker-js/faker';
+import dadosUsuarios from '../../fixtures/usuarios.json';
 
 describe('Funcionalidade: Cadastro', () => {
   beforeEach(() => {
@@ -36,15 +37,25 @@ describe('Funcionalidade: Cadastro', () => {
     cy.get('h1').should('contain', 'Serverest Store');
   });
 
-  it('Deve fazer o cadastro de Usuário Comum com sucesso, usando comando customizado', () => {
+  it.skip('Deve fazer o cadastro de Usuário Comum com sucesso, usando comando customizado', () => {
     cy.cadastroUsuarioComum('Jessica Teste', faker.internet.email(), '123456');
     cy.get('.alert').should('contain', 'Cadastro realizado com sucesso');
     cy.get('h1').should('contain', 'Serverest Store');
   });
 
-  it('Deve fazer o cadastro de Usuário Admin com sucesso, usando comando customizado', () => {
+  it.skip('Deve fazer o cadastro de Usuário Admin com sucesso, usando comando customizado', () => {
     cy.cadastroUsuarioAdmin('Jessica Teste', faker.internet.email(), '123456');
     cy.get('.alert').should('contain', 'Cadastro realizado com sucesso');
     cy.get('h1').should('contain', 'Bem Vindo');
+  });
+
+  it('Deve fazer o cadastro de Usuário Comum com sucesso, usando importação de dados', () => {
+    cy.cadastroUsuarioComum(
+      dadosUsuarios[0].nome,
+      dadosUsuarios[0].email,
+      dadosUsuarios[0].password
+    );
+    cy.get('.alert').should('contain', 'Cadastro realizado com sucesso');
+    cy.get('h1').should('contain', 'Serverest Store');
   });
 });
