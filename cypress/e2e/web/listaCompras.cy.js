@@ -12,7 +12,7 @@ describe('Funcionalidade: Lista de Compras', () => {
     cy.login('Harry_Turcotte@gmail.com', '123456');
   });
 
-  it('Deve validar entrada na Lista de Compras e adicionar Produto no carrinho', () => {
+  it('Deverá validar entrada na Lista de Compras e adicionar Produto no carrinho', () => {
     cy.get('h1').should('contain', 'Serverest Store');
     cy.get(
       ':nth-child(1) > .card-body > div > [href="/minhaListaDeProdutos"] > [data-testid="adicionarNaLista"]'
@@ -22,7 +22,7 @@ describe('Funcionalidade: Lista de Compras', () => {
     cy.get('[data-testid="adicionar carrinho"]').click();
   });
 
-  it('Deve limpar a Lista de Compras', () => {
+  it('Deverá limpar a Lista de Compras', () => {
     cy.get('h1').should('contain', 'Serverest Store');
     cy.get(
       ':nth-child(1) > .card-body > div > [href="/minhaListaDeProdutos"] > [data-testid="adicionarNaLista"]'
