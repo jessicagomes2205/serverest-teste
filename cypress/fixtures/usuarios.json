@@ -1,0 +1,25 @@
+[
+    {
+        "nome" : "Jéssica Gomes",
+        "email" : "jessica@gomes.com",
+        "password" : "teste@123"
+    },
+
+    {
+        "nome" : "Fulano de Tal",
+        "email" : "fulano01@tal.com",
+        "password" : "teste@123"
+    },
+
+    {
+        "nome" : "Fulano de Tal da Silva",
+        "email" : "fulano02@tal.com",
+        "password" : "teste@123"
+    },
+
+    {
+        "nome" : "Fulano de Tal dos Santos",
+        "email" : "fulano03@tal.com",
+        "password" : "teste@123"
+    }
+]

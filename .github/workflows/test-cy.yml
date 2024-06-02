@@ -1,0 +1,30 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: ['main']
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: subir servidor do Serverest
+        run: nohup npm run start &
+
+      - name: Instalar dependencias do node
+        run: npm install -f
+
+      - name: Executar os tests
+        run: npm run cypress:report

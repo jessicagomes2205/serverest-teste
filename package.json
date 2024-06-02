@@ -1,15 +1,23 @@
 {
-  "name": "serverest-teste",
+  "name": "severest-test",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx cypress run --browser chrome",
+    "start": "npx serverest -y",
+    "cypress:report": "npx cypress run --record --key 5f11331a-2db1-4ee0-b132-57d482d936d6",
+    "allure:report": "npx allure serve allure-results"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@faker-js/faker": "^8.4.1",
     "cypress": "^13.9.0"
+  },
+  "devDependencies": {
+    "allure-commandline": "^2.29.0",
+    "allure-cypress": "^2.15.1"
   }
 }
