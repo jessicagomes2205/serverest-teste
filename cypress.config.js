@@ -8,6 +8,6 @@ module.exports = defineConfig({
     },
     baseUrl: 'https://front.serverest.dev/',
     video: false,
-    projectId: '3zccnm',
+    projectId: 'xhyuhk',
   },
 });
